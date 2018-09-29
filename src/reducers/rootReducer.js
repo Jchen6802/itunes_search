@@ -1,5 +1,9 @@
-import * as Constants from '../constants/constants';
+import { combineReducers } from 'redux';
 
-export default function(state = Constants.INITIAL_STATE, action) {
-    return state;
-}
+import { data } from './data.js';
+import { searchTerm } from './searchTerm.js';
+
+export default combineReducers({
+    data,
+    searchTerm
+});
