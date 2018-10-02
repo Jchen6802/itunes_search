@@ -7,6 +7,7 @@ export const FETCH_SOURCE = 'https://itunes.apple.com/search';
 export const INITIAL_STATE = {
     searchTerm: '',
     data: Immutable.fromJS({
-        resultCount: 0
+        results: [],
+        resultCount: 0,
     })
 };

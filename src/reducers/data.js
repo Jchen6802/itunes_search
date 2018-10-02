@@ -10,7 +10,6 @@ export const data = (state = Constants.INITIAL_STATE.data, action) => {
 }
 
 const fetchData = (state, action) => {
-    console.log("fetchData", action);
     return state.set('resultCount', action.value.resultCount)
         .set('results', action.value.results);
 }

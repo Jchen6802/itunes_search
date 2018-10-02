@@ -6,7 +6,7 @@ export const updateSearchTerm = (value) => {
     return {
         type: Constants.UPDATE_SEARCH_TERM,
         value
-    }
+    };
 }
 
 export const fetchData = (searchTerm) => {
@@ -20,5 +20,5 @@ export const fetchData = (searchTerm) => {
             }).catch( error => {
                 console.log(error);
             });
-    }
+    };
 };
