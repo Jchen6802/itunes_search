@@ -11,11 +11,12 @@ export const updateSearchTerm = (value) => {
 
 export const fetchData = (searchTerm) => {
     return (dispatch, getState) => {
-        return axios.get(`${Constants.FETCH_SOURCE}?term=${searchTerm}&entity=album&attribute=artistTerm`)
+        const itunesApiUrl = `${Constants.FETCH_SOURCE}?term=${searchTerm}&entity=album&attribute=artistTerm`;
+        return axios.get(itunesApiUrl)
             .then(response => {
                 dispatch({
-                    type: Constants.FETCH_DATA,
-                    value: response.data
+                    type: Constants.SET_ALBUMS,
+                    value: response.data.results
                 });
             }).catch( error => {
                 console.log(error);

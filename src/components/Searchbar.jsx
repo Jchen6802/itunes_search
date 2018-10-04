@@ -5,10 +5,6 @@ import React, { Component } from 'react';
 
 import * as Actions from '../actions/actions';
 
-const SearchbarContainer = styled.div`
-    width: 100%
-`;
-
 const SearchInput = styled.input`
     max-width: 100%;
 `;

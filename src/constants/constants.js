@@ -1,13 +1,10 @@
 import Immutable from 'immutable';
 
-export const FETCH_DATA = 'FETCH_DATA';
+export const SET_ALBUMS = 'SET_ALBUMS';
 export const UPDATE_SEARCH_TERM = 'UPDATE_SEARCH_TERM';
 export const FETCH_SOURCE = 'https://itunes.apple.com/search';
 
 export const INITIAL_STATE = {
-    searchTerm: '',
-    data: Immutable.fromJS({
-        results: [],
-        resultCount: 0,
-    })
+    albums: Immutable.List(),
+    searchTerm: ''
 };
