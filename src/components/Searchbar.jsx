@@ -59,7 +59,7 @@ export class Searchbar extends Component {
 Searchbar.propTypes = {
     fetchData: PropTypes.func.isRequired,
     setStatus: PropTypes.func.isRequired,
-    searchTerm: PropTypes.string,
+    searchTerm: PropTypes.string.isRequired,
     updateSearchTerm: PropTypes.func.isRequired,
 };
 

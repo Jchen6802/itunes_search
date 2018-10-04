@@ -18,7 +18,8 @@ export const setStatus = (value) => {
 
 export const fetchData = (searchTerm) => {
     return (dispatch, getState) => {
-        const itunesApiUrl = `${Constants.FETCH_SOURCE}?term=${searchTerm}&entity=album&attribute=artistTerm`;
+        const itunesApiUrl = `${Constants.FETCH_SOURCE}?term=${searchTerm}
+            &entity=album&attribute=artistTerm`;
 
         return axios.get(itunesApiUrl)
             .then(response => {
