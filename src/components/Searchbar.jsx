@@ -34,14 +34,19 @@ export class Searchbar extends Component {
         </button>
     }
 
-    onClick = (ev) => {
-        this.props.fetchData(this.props.searchTerm);
+    onClick = () => {
+        this.search();
     }
 
     onKeyDown = (ev) => {
         if (ev.key.toLowerCase() === 'enter') {
-            this.props.fetchData(this.props.searchTerm);
+            this.search();
         }
+    }
+
+    search = () => {
+        this.props.setStatusToSearching();
+        this.props.fetchData(this.props.searchTerm);
     }
 
     onChange = (ev) => {
@@ -64,7 +69,8 @@ const mapStateToProps = (state) => {
 
 const mapActionsToProps = {
     fetchData: Actions.fetchData,
-    updateSearchTerm: Actions.updateSearchTerm
+    updateSearchTerm: Actions.updateSearchTerm,
+    setStatusToSearching: Actions.setStatusToSearching,
 };
 
 export default connect(mapStateToProps, mapActionsToProps)(Searchbar);

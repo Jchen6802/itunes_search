@@ -9,16 +9,27 @@ export const updateSearchTerm = (value) => {
     };
 }
 
+export const setStatus = (value) => {
+    return {
+        type: Constants.SET_STATUS,
+        value
+    }
+};
+
+export const setStatusToSearching = () => {
+    return setStatus(Constants.STATUSES.SEARCHING);
+}
+
 export const fetchData = (searchTerm) => {
     return (dispatch, getState) => {
         const itunesApiUrl = `${Constants.FETCH_SOURCE}?term=${searchTerm}&entity=album&attribute=artistTerm`;
 
-        dispatch(setAlbums(Constants.INITIAL_STATE.albums));
         return axios.get(itunesApiUrl)
             .then(response => {
                 dispatch(setAlbums(response.data.results));
+                dispatch(setStatus(Constants.STATUSES.INITIAL));
             }).catch( error => {
-                console.log(error);
+                dispatch(setStatus(Constants.STATUSES.ERROR));
             });
     };
 };
