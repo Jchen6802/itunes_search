@@ -4,7 +4,7 @@ import styled from 'styled-components';
 import React, { Component } from 'react';
 
 import Album from './Album.jsx';
-import { getAlbums } from '../utils/utils';
+import { renderAlbums } from '../utils/utils';
 import { STATUSES } from '../constants/constants';
 import { albumsSelector, statusSelector } from '../selectors';
 
@@ -16,7 +16,7 @@ export class AlbumsList extends Component {
     render() {
         return <div>
             {this.renderResultsCount()}
-            {getAlbums(this.props.albums, Album)}
+            {renderAlbums(this.props.albums, Album)}
         </div>;
     }
 
