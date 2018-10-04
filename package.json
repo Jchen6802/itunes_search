@@ -23,9 +23,13 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
   },
+  "homepage": "https://jchen6802.github.io/itunes_search",
   "devDependencies": {
+    "gh-pages": "^2.0.1",
     "moxios": "^0.4.0",
     "redux-mock-store": "^1.5.3"
   }
