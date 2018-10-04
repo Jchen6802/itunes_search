@@ -10,6 +10,7 @@ const AlbumCard = styled.div`
 `;
 
 const AlbumName = styled.div`
+    margin-top: 5px;
     font-size: .9em;
     font-weight: bold;
 `;
