@@ -2,8 +2,11 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import styled from 'styled-components';
 import React, { Component } from 'react';
+import { faSearch }  from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 import * as Actions from '../actions/actions';
+import { searchTermSelector } from '../selectors';
 
 const SearchInput = styled.input`
     max-width: 100%;
@@ -19,11 +22,16 @@ export class Searchbar extends Component {
                 onChange={this.onChange}
                 onKeyDown={this.onKeyDown}
                 placeholder="Search by name"/>
-            <button
-                onClick={this.onClick}>
-                Search
-            </button>
+            {this.renderButton()}
         </div>;
+    }
+
+    renderButton() {
+        return <button
+            onClick={this.onClick}>
+            <FontAwesomeIcon
+                icon={faSearch}     />
+        </button>
     }
 
     onClick = (ev) => {
@@ -50,7 +58,7 @@ Searchbar.propTypes = {
 
 const mapStateToProps = (state) => {
     return {
-        searchTerm: state.searchTerm
+        searchTerm: searchTermSelector(state)
     };
 };
 

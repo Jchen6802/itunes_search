@@ -4,6 +4,7 @@ import styled from 'styled-components';
 
 import Album from './Album.jsx';
 import { getAlbums } from '../utils/utils';
+import { albumsSelector } from '../selectors';
 
 const ResultsDiv = styled.div`
     margin-top: 20px;
@@ -27,7 +28,7 @@ export class AlbumsList extends Component {
 
 const mapStateToProps = (state) => {
     return {
-        albums: state.albums.toJS()
+        albums: albumsSelector(state)
     };
 }
 
