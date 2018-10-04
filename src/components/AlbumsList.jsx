@@ -5,7 +5,8 @@ import React, { Component } from 'react';
 
 import Album from './Album.jsx';
 import { getAlbums } from '../utils/utils';
-import { albumsSelector } from '../selectors';
+import { STATUSES } from '../constants/constants';
+import { albumsSelector, statusSelector } from '../selectors';
 
 const ResultsDiv = styled.div`
     margin-top: 20px;
@@ -21,19 +22,25 @@ export class AlbumsList extends Component {
 
     renderResultsCount() {
         const albumsCount = this.props.albums.length;
-        return albumsCount > 0 && <ResultsDiv>
+        return this.inSearchedState() && <ResultsDiv>
             {albumsCount} results found.
         </ResultsDiv>;
+    }
+
+    inSearchedState = () => {
+        return this.props.status === STATUSES.SEARCHED;
     }
 }
 
 AlbumsList.propTypes = {
-    albums: PropTypes.array.isRequired
+    albums: PropTypes.array.isRequired,
+    status: PropTypes.string.isRequired
 };
 
 const mapStateToProps = (state) => {
     return {
-        albums: albumsSelector(state)
+        albums: albumsSelector(state),
+        status: statusSelector(state)
     };
 }
 

@@ -30,7 +30,7 @@ SearchErrors.propTypes = {
 const mapStateToProps = (state) => {
     return {
         status: statusSelector(state)
-    }
+    };
 };
 
 export default connect(mapStateToProps)(SearchErrors);

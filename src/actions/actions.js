@@ -16,10 +16,6 @@ export const setStatus = (value) => {
     }
 };
 
-export const setStatusToSearching = () => {
-    return setStatus(Constants.STATUSES.SEARCHING);
-}
-
 export const fetchData = (searchTerm) => {
     return (dispatch, getState) => {
         const itunesApiUrl = `${Constants.FETCH_SOURCE}?term=${searchTerm}&entity=album&attribute=artistTerm`;
@@ -27,7 +23,7 @@ export const fetchData = (searchTerm) => {
         return axios.get(itunesApiUrl)
             .then(response => {
                 dispatch(setAlbums(response.data.results));
-                dispatch(setStatus(Constants.STATUSES.INITIAL));
+                dispatch(setStatus(Constants.STATUSES.SEARCHED));
             }).catch( error => {
                 dispatch(setStatus(Constants.STATUSES.ERROR));
             });

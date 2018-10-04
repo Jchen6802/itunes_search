@@ -6,6 +6,7 @@ import { faSearch }  from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 import * as Actions from '../actions/actions';
+import { STATUSES } from '../constants/constants';
 import { searchTermSelector } from '../selectors';
 
 const SearchInput = styled.input`
@@ -45,7 +46,7 @@ export class Searchbar extends Component {
     }
 
     search = () => {
-        this.props.setStatusToSearching();
+        this.props.setStatus(STATUSES.SEARCHING);
         this.props.fetchData(this.props.searchTerm);
     }
 
@@ -69,8 +70,8 @@ const mapStateToProps = (state) => {
 
 const mapActionsToProps = {
     fetchData: Actions.fetchData,
+    setStatus: Actions.setStatus,
     updateSearchTerm: Actions.updateSearchTerm,
-    setStatusToSearching: Actions.setStatusToSearching,
 };
 
 export default connect(mapStateToProps, mapActionsToProps)(Searchbar);

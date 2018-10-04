@@ -7,6 +7,7 @@ export const FETCH_SOURCE = 'https://itunes.apple.com/search';
 export const STATUSES = {
     ERROR: 'ERROR',
     INITIAL: 'INITIAL',
+    SEARCHED: 'SEARCHED',
     SEARCHING: 'SEARCHING',
 };
 
