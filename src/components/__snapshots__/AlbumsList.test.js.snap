@@ -1,0 +1,47 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`will initially render nothing 1`] = `<div />`;
+
+exports[`will render 0 results when there are no albums after searching 1`] = `
+<div>
+  <div
+    className="sc-bxivhb jUhmZc"
+  >
+    0
+     results found.
+  </div>
+</div>
+`;
+
+exports[`will render the correct result count and albums after searching 1`] = `
+<div>
+  <div
+    className="sc-bxivhb jUhmZc"
+  >
+    1
+     results found.
+  </div>
+  <div
+    className="column"
+  >
+    <div
+      className="sc-bdVaJa gfWgdN"
+    >
+      <img
+        alt="someAlbum"
+        src="albumCoverUrl"
+      />
+      <div
+        className="sc-bwzfXH hTbHfO"
+      >
+        someAlbum
+      </div>
+      <div
+        className="sc-htpNat fpkfan"
+      >
+        someArtist
+      </div>
+    </div>
+  </div>
+</div>
+`;

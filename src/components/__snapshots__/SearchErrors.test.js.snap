@@ -1,0 +1,11 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`does not render when not in the error status 1`] = `null`;
+
+exports[`renders as expected when in the error status 1`] = `
+<div
+  className="sc-bdVaJa OItRm"
+>
+  Searcher encountered an error! Please try searching again.
+</div>
+`;

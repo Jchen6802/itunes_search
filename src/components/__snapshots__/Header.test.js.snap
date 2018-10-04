@@ -1,0 +1,20 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`will render as expected 1`] = `
+<div
+  className="sc-bdVaJa gZdsYr"
+>
+  <header
+    className="sc-bwzfXH blyfVT"
+  >
+    <h1
+      className="sc-htpNat jBZobA"
+    >
+      Welcome to the iTunes searcher
+    </h1>
+    <div>
+      Search for all your favorite artists below
+    </div>
+  </header>
+</div>
+`;

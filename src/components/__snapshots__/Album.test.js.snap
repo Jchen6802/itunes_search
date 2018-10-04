@@ -1,0 +1,26 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`will render as expected 1`] = `
+<div
+  className="column"
+>
+  <div
+    className="sc-bdVaJa gfWgdN"
+  >
+    <img
+      alt="someAlbum"
+      src="someAlbumCoverUrl"
+    />
+    <div
+      className="sc-bwzfXH hTbHfO"
+    >
+      someAlbum
+    </div>
+    <div
+      className="sc-htpNat fpkfan"
+    >
+      someArtist
+    </div>
+  </div>
+</div>
+`;
