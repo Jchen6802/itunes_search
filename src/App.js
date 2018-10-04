@@ -1,19 +1,25 @@
-import './App.css';
+import styled from 'styled-components';
 import React, { Component } from 'react';
 
-import Albums from './components/Albums.jsx';
+import Header from './components/Header.jsx';
 import Searchbar from './components/Searchbar.jsx';
+import AlbumsList from './components/AlbumsList.jsx';
+
+export const AppContainer = styled.div`
+    max-width: 1140px;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+`;
 
 export default class App extends Component {
     render() {
         return (
-            <div className="App">
-                <header className="App-header">
-                    <h1 className="App-title">Welcome to the iTunes searcher</h1>
-                </header>
+            <AppContainer className="col-4">
+                <Header/>
                 <Searchbar/>
-                <Albums/>
-            </div>
+                <AlbumsList/>
+            </AppContainer>
         );
     }
 }

@@ -1,14 +1,23 @@
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
+import styled from 'styled-components';
 import React, { Component } from 'react';
 
 import * as Actions from '../actions/actions';
+
+const SearchbarContainer = styled.div`
+    width: 100%
+`;
+
+const SearchInput = styled.input`
+    max-width: 100%;
+`;
 
 export class Searchbar extends Component {
 
     render() {
         return <div>
-            <input
+            <SearchInput
                 type="search"
                 value={this.props.searchTerm}
                 onChange={this.onChange}
