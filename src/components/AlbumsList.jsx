@@ -1,8 +1,13 @@
 import { connect } from 'react-redux';
 import React, { Component } from 'react';
+import styled from 'styled-components';
 
 import Album from './Album.jsx';
 import { getAlbums } from '../utils/utils';
+
+const ResultsDiv = styled.div`
+    margin-top: 20px;
+`;
 
 export class AlbumsList extends Component {
     render() {
@@ -14,9 +19,9 @@ export class AlbumsList extends Component {
 
     renderResultsCount() {
         const albumsCount = this.props.albums.length;
-        return albumsCount > 0 && <div>
+        return albumsCount > 0 && <ResultsDiv>
             {albumsCount} results found.
-        </div>;
+        </ResultsDiv>;
     }
 }
 
